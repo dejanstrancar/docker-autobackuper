@@ -84,3 +84,4 @@ To set up CRON jobs
  * http://www.defitek.com/blog/2010/01/06/a-simple-yet-effective-postgresql-backup-script/#codesyntax_1
  * https://www.odoo.com/forum/help-1/question/how-to-setup-a-regular-postgresql-database-backup-4728
  * https://gist.github.com/matthewlehner/3091458
+ * https://stackoverflow.com/a/29913462/968751 - Dump PostgreSQL docker container

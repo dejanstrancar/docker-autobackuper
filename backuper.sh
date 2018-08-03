@@ -23,6 +23,7 @@ fi
 # Backup database
 database_backup() {
   # backup database
+  mkdir -p ${TMP_DIR}/db
   docker exec -t $DB_CONTAINER pg_dumpall -c -U postgres > ${TMP_DIR}/db/dump_${BACKUP_DATE}.sql
 }
 
