@@ -10,6 +10,7 @@ PREFIX=$(hostname)
 GIT_RAW_REF="https://raw.githubusercontent.com/msadig/docker-autobackuper/master"
 ERROR_STATUS=0
 VERSION="0.1"
+POSTGRES_USER=postgres
 
 # Get config
 if [ ! -f $CURRENT_PATH/backup.conf ]; then
@@ -24,7 +25,7 @@ fi
 database_backup() {
   # backup database
   mkdir -p ${TMP_DIR}/db
-  docker exec -t $DB_CONTAINER pg_dumpall -c -U postgres > ${TMP_DIR}/db/dump_${BACKUP_DATE}.sql
+  docker exec -t $DB_CONTAINER pg_dumpall -c -U ${POSTGRES_USER} > ${TMP_DIR}/db/dump_${BACKUP_DATE}.sql
 }
 
 # Delete older backups of database
